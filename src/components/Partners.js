@@ -1,3 +1,4 @@
+import FadeIn from "./animations/FadeIn";
 const mbrf = "/assets/mbrf.svg";
 const kf = "/assets/kf.svg";
 const uae = "/assets/uae.svg";
@@ -18,13 +19,15 @@ const logos = [mbrf, kf, uae, sandpiper, prime, apco, offline];
 export default function Partners() {
   return (
     <section className="partners">
-      <div style={{ overflow: "hidden" }}>
-        <div className="partners-track">
-          {[...logos, ...logos].map((src, i) => (
-            <PartnerLogo key={i} src={src} />
-          ))}
+      <FadeIn direction="up">
+        <div style={{ overflow: "hidden" }}>
+          <div className="partners-track">
+            {[...logos, ...logos].map((src, i) => (
+              <PartnerLogo key={i} src={src} />
+            ))}
+          </div>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

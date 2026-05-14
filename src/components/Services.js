@@ -51,11 +51,13 @@ const services = [
   },
 ];
 
-function ServiceCard({ svc }) {
+import FadeIn from "./animations/FadeIn";
+
+function ServiceCard({ svc, index }) {
   return (
-    <div className={`service-card${svc.reverse ? " reverse" : ""}`}>
+    <FadeIn direction="up" delay={index * 0.1} className={`service-card${svc.reverse ? " reverse" : ""}`}>
       <div className="service-card-bg">
-        <img src="/assets/service-lines.svg" alt="" className="service-lines-bg" />
+        <img src="/assets/sl.svg" alt="" className="service-lines-bg" />
       </div>
       <div className="service-img">
         <img src={svc.img} alt={svc.title} />
@@ -64,7 +66,7 @@ function ServiceCard({ svc }) {
         <h3 className="service-title">{svc.title}</h3>
         <p className="service-desc">{svc.desc}</p>
       </div>
-    </div>
+    </FadeIn>
   );
 }
 
@@ -72,18 +74,19 @@ export default function Services() {
   return (
     <section className="services" id="services">
       <div className="services-inner">
-        <div className="services-header">
+        <FadeIn direction="down" className="services-header">
           <h2 className="services-label">
             How We Help Our Clients
           </h2>
           <p className="services-sublabel">Specialized Digital Communication Solutions</p>
-        </div>
+        </FadeIn>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          {services.map((svc) => (
-            <ServiceCard key={svc.title} svc={svc} />
+          {services.map((svc, i) => (
+            <ServiceCard key={svc.title} svc={svc} index={i} />
           ))}
         </div>
       </div>
     </section>
   );
 }
+

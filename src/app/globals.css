@@ -42,7 +42,7 @@
   --muted-text: #6b7280;
   --light-on-dark: #cacaca;
   --border-dark: rgba(255, 255, 255, 0.08);
-  
+
   /* Font Variables */
   --font-eurostile: 'Eurostile', sans-serif;
   --font-pirulen: 'Pirulen', sans-serif;
@@ -132,15 +132,38 @@ body {
   height: 2px;
   background: #fff;
   border-radius: 2px;
-  transition: 0.3s;
+  transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .mobile-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 0;
   background: var(--bg-dark);
   padding: 12px 0;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-bottom: 1px solid var(--border-dark);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-15px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
 }
 
 .mobile-menu a {
@@ -149,15 +172,19 @@ body {
   text-decoration: none;
   padding: 12px 24px;
   display: block;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
 .mobile-menu a:hover {
   background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transform: translateX(4px);
 }
 
 .mobile-menu.open {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* ── HERO ── */
@@ -414,7 +441,7 @@ body {
 
 .service-card:hover {
   background: #001c38;
-  border-color: rgba(0, 113, 188, 0.4);
+  border-color: #001C38;
 }
 
 .service-card-bg {
@@ -435,7 +462,8 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  opacity: 0.4; /* Slightly dim it as per Figma look */
+  opacity: 0.4;
+  /* Slightly dim it as per Figma look */
   animation: floatLines 20s ease-in-out infinite alternate;
 }
 
@@ -443,6 +471,7 @@ body {
   from {
     transform: scale(1.1) translateY(-10px) translateX(-10px);
   }
+
   to {
     transform: scale(1.2) translateY(10px) translateX(10px);
   }
@@ -452,6 +481,7 @@ body {
   from {
     background-position: 0 0;
   }
+
   to {
     background-position: 100% 100%;
   }
@@ -461,7 +491,7 @@ body {
   direction: rtl;
 }
 
-.service-card.reverse > * {
+.service-card.reverse>* {
   direction: ltr;
 }
 
@@ -469,7 +499,8 @@ body {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  z-index: 2; /* Above the background lines */
+  z-index: 2;
+  /* Above the background lines */
 }
 
 .service-img img {
@@ -490,7 +521,8 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  z-index: 2; /* Above the background lines */
+  z-index: 2;
+  /* Above the background lines */
 }
 
 .service-title {

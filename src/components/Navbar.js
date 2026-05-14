@@ -18,7 +18,7 @@ export default function Navbar() {
           <a href="#contact">Contact Us</a>
         </div>
         <button
-          className="hamburger"
+          className={`hamburger ${open ? "open" : ""}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >

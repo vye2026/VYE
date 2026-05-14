@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import FadeIn from "./animations/FadeIn";
 
 const Phone = "/assets/Phone.svg";
 const Email = "/assets/Email.svg";
@@ -44,7 +45,7 @@ export default function Contact() {
   return (
     <section className="contact" id="contact">
       <div className="contact-inner">
-        <div>
+        <FadeIn direction="right">
           <h2 className="contact-heading">Contact Us</h2>
           <p className="contact-subheading">Let's start a conversation.</p>
           <div className="contact-info-list">
@@ -61,51 +62,53 @@ export default function Contact() {
               <span>Address: Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates</span>
             </div>
           </div>
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div className="form-grid">
-            <div className="form-field">
-              <label className="form-label">Name</label>
-              <input name="name" className="form-input" type="text" placeholder="Enter your name" required />
+        </FadeIn>
+        <FadeIn direction="left" delay={0.2}>
+          <form onSubmit={handleSubmit}>
+            <div className="form-grid">
+              <div className="form-field">
+                <label className="form-label">Name</label>
+                <input name="name" className="form-input" type="text" placeholder="Enter your name" required />
+              </div>
+              <div className="form-field">
+                <label className="form-label">Email</label>
+                <input name="email" className="form-input" type="email" placeholder="Enter your email" required />
+              </div>
+              <div className="form-field">
+                <label className="form-label">Organization</label>
+                <input name="organization" className="form-input" type="text" placeholder="Enter your organization" />
+              </div>
+              <div className="form-field">
+                <label className="form-label">Subject</label>
+                <input name="subject" className="form-input" type="text" placeholder="e.g. Pricing" />
+              </div>
+              <div className="form-field full">
+                <label className="form-label">Message</label>
+                <textarea name="message" className="form-textarea" placeholder="Type Your Message" rows={5} required />
+              </div>
             </div>
-            <div className="form-field">
-              <label className="form-label">Email</label>
-              <input name="email" className="form-input" type="email" placeholder="Enter your email" required />
-            </div>
-            <div className="form-field">
-              <label className="form-label">Organization</label>
-              <input name="organization" className="form-input" type="text" placeholder="Enter your organization" />
-            </div>
-            <div className="form-field">
-              <label className="form-label">Subject</label>
-              <input name="subject" className="form-input" type="text" placeholder="e.g. Pricing" />
-            </div>
-            <div className="form-field full">
-              <label className="form-label">Message</label>
-              <textarea name="message" className="form-textarea" placeholder="Type Your Message" rows={5} required />
-            </div>
-          </div>
 
-          <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "20px", marginTop: "10px" }}>
-            {submitStatus === "success" && (
-              <span style={{ color: "#4ade80", fontSize: "14px", textAlign: "right" }}>
-                Message Submitted Successfully
-              </span>
-            )}
-            {submitStatus === "error" && (
-              <span style={{ color: "#f87171", fontSize: "14px" }}>Something went wrong. Please try again.</span>
-            )}
-
-            <button type="submit " className="btn-submit items-baseline" disabled={isSubmitting}>
-              {isSubmitting ? "Sending..." : "Submit"}
-              {!isSubmitting && (
-                <span>
-                  <img src={Send} alt="" />
+            <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "20px", marginTop: "10px" }}>
+              {submitStatus === "success" && (
+                <span style={{ color: "#4ade80", fontSize: "14px", textAlign: "right" }}>
+                  Message Submitted Successfully
                 </span>
               )}
-            </button>
-          </div>
-        </form>
+              {submitStatus === "error" && (
+                <span style={{ color: "#f87171", fontSize: "14px" }}>Something went wrong. Please try again.</span>
+              )}
+
+              <button type="submit " className="btn-submit items-baseline" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Submit"}
+                {!isSubmitting && (
+                  <span>
+                    <img src={Send} alt="" />
+                  </span>
+                )}
+              </button>
+            </div>
+          </form>
+        </FadeIn>
       </div>
     </section>
   );
