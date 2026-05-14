@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const Phone = "/assets/phone.svg";
+const Phone = "/assets/Phone.svg";
 const Email = "/assets/Email.svg";
 const Map = "/assets/MapPin.svg";
 const Send = "/assets/PaperPlaneRight.svg";
@@ -46,7 +46,7 @@ export default function Contact() {
       <div className="contact-inner">
         <div>
           <h2 className="contact-heading">Contact Us</h2>
-          <p className="contact-subheading">We are always listening to our clients</p>
+          <p className="contact-subheading">Let's start a conversation.</p>
           <div className="contact-info-list">
             <div className="contact-info-item">
               <img src={Phone} alt="" />
@@ -96,7 +96,7 @@ export default function Contact() {
               <span style={{ color: "#f87171", fontSize: "14px" }}>Something went wrong. Please try again.</span>
             )}
 
-            <button type="submit" className="btn-submit" disabled={isSubmitting}>
+            <button type="submit " className="btn-submit items-baseline" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Submit"}
               {!isSubmitting && (
                 <span>

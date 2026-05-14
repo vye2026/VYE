@@ -60,26 +60,26 @@ export default function Footer() {
         <p className="footer-copy">© 2026 VYE. All rights reserved.</p>
         <div className="social-icons">
           <div className="bg-[#022140]/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#022140]">
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/profile.php?id=61573027712409" target="_blank" rel="noopener noreferrer">
               <img src={Facebook} alt="Facebook" className="w-5 h-5" />
             </a>
           </div>
 
           <div className="bg-[#022140]/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#022140]">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src={Insta} alt="Facebook" className="w-5 h-5" />
+            <a href="https://www.instagram.com/vye.comms/" target="_blank" rel="noopener noreferrer">
+              <img src={Insta} alt="Instagram" className="w-5 h-5" />
             </a>
           </div>
 
           <div className="bg-[#022140]/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#022140]">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src={Linkedin} alt="Facebook" className="w-5 h-5" />
+            <a href="https://www.linkedin.com/company/vyecomms" target="_blank" rel="noopener noreferrer">
+              <img src={Linkedin} alt="Linkedin" className="w-5 h-5" />
             </a>
           </div>
 
           <div className="bg-[#022140]/70 w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#022140]">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src={X} alt="Facebook" className="w-5 h-5" />
+            <a href="https://x.com/vyecomms?s=21" target="_blank" rel="noopener noreferrer">
+              <img src={X} alt="X" className="w-5 h-5" />
             </a>
           </div>
 
