@@ -74,7 +74,7 @@ export default function Services() {
       <div className="services-inner">
         <div className="services-header">
           <h2 className="services-label">
-            How We Help <span>Our Clients</span>
+            How We Help Our Clients
           </h2>
           <p className="services-sublabel">Specialized Digital Communication Solutions</p>
         </div>
