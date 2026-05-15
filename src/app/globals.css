@@ -60,6 +60,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -546,6 +547,7 @@ body {
 .contact {
   background: var(--bg-light);
   padding: 80px;
+  overflow: hidden;
 }
 
 .contact-inner {
